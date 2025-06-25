@@ -6,118 +6,183 @@
   <style>
     body {
       margin: 0;
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
       background: #fff;
-      font-family: 'Inter', Arial, sans-serif;
+      color: #191619;
     }
-    .bordered {
-      border: 1px solid #000;
-      box-sizing: border-box;
+    .section-label {
+      display: inline-block;
+      background: #effeff;
+      color: #0cbbc7;
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 60px;
+      padding: 4px 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
     }
-    .header, .footer, .main-banner, .featured, .testimonials, .search-bar, .nav-bar, .logo, .ai-chatbot-btn, .additional-links {
-      position: absolute;
-      left: 0;
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px 40px 24px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      margin: 0 0 24px 0;
+      line-height: 1.1;
+    }
+    .hero p {
+      font-size: 22px;
+      color: #6b6b6b;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      background: #0cbbc7;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 16px 40px;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(12, 187, 199, 0.15);
+    }
+    .cta-btn:hover {
+      background: #099fa7;
+    }
+    .trusted {
+      background: #f7f7f7;
+      padding: 32px 0;
+      text-align: center;
+    }
+    .trusted-title {
+      color: #6b6b6b;
+      font-size: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .trusted-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trusted-logos img {
+      height: 32px;
+      opacity: 0.7;
+      filter: grayscale(1);
+      transition: opacity 0.2s;
+    }
+    .trusted-logos img:hover {
+      opacity: 1;
+      filter: none;
+    }
+    .features {
+      max-width: 1200px;
+      margin: 64px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .feature-card {
       background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(12, 187, 199, 0.07);
+      padding: 32px 24px;
+      flex: 1 1 320px;
+      max-width: 360px;
+      min-width: 280px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
     }
-    .header {
-      top: 0; width: 1920px; height: 80px;
-      border: 1px solid #000;
+    .feature-card img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin-bottom: 8px;
     }
-    .logo {
-      left: 20px; top: 0; width: 200px; height: 80px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
+    .feature-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
     }
-    .logo img { position: absolute; left: 0; top: 0; width: 200px; height: 80px; }
-    .logo-text {
-      position: absolute; left: 100px; top: 40px; transform: translate(-50%,-50%);
-      width: 200px; text-align: center; font-size: 16px; color: #000;
-    }
-    .nav-bar {
-      left: 1120px; top: 0; width: 800px; height: 80px;
-      border: 1px solid #000;
-      display: flex; align-items: center;
-    }
-    .nav-bar .nav-btn {
-      background: #ccc; border: 1px solid #000;
-      width: 100px; height: 40px; margin: 0 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; color: #000; cursor: pointer;
-    }
-    .search-bar {
-      top: 100px; left: 710px; width: 500px; height: 60px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
+    .feature-card p {
+      color: #6b6b6b;
       font-size: 16px;
-    }
-    .main-banner {
-      top: 180px; left: 0; width: 1920px; height: 400px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; position: absolute;
-      overflow: hidden;
-    }
-    .main-banner img { position: absolute; left: 0; top: 0; width: 1920px; height: 400px; }
-    .main-banner .banner-text {
-      position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-      width: 1920px; text-align: center; font-size: 16px; color: #000;
-    }
-    .featured {
-      top: 580px; left: 0; width: 1920px; height: 200px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-    }
-    .testimonials {
-      top: 780px; left: 0; width: 1920px; height: 200px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+      margin: 0;
     }
     .footer {
-      top: 980px; left: 0; width: 1920px; height: 60px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; opacity: 0.5;
-    }
-    .additional-links {
-      top: 980px; left: 560px; width: 800px; height: 60px;
-      border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
+      background: #0cbbc7;
+      color: #fff;
+      text-align: center;
+      padding: 32px 0 16px 0;
       font-size: 16px;
+      margin-top: 64px;
     }
-    .ai-chatbot-btn {
-      top: 860px; left: 1760px; width: 80px; height: 80px;
-      background: #ccc; border: 1px solid #000;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+    @media (max-width: 900px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-card {
+        max-width: 100%;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="header bordered">
-    <div style="opacity:0.5; position:absolute; left:0; top:0; width:1920px; height:80px; display:flex; align-items:center; font-size:16px; color:#000;">Header</div>
-    <div class="logo bordered" style="top:0; left:20px;">
-      <img src="http://localhost:3845/assets/036471c0e16fc02c4fa75bfde80d0909b354a9ad.svg" alt="Logo Vector" style="z-index:1;">
-      <img src="http://localhost:3845/assets/65d57973b6ffadd777e3258e2ee3bbffaaf19295.svg" alt="Logo Vector" style="z-index:2;">
-      <div class="logo-text" style="z-index:3;">Logo</div>
-    </div>
-    <div class="nav-bar bordered" style="left:1120px;">
-      <div style="opacity:0.5; position:absolute; left:0; top:0; width:800px; height:80px; display:flex; align-items:center; font-size:16px; color:#000;">Navigation Bar</div>
-      <div class="nav-btn">Book Now</div>
-      <div class="nav-btn">Enquiry</div>
-      <div class="nav-btn">Test Ride</div>
+  <div class="hero">
+    <div class="section-label">AI in Digital Experience Design</div>
+    <h1>Transforming Digital Experiences with AI</h1>
+    <p>
+      Discover how artificial intelligence is revolutionizing the way we design, build, and interact with digital products. From personalized user journeys to intelligent automation, explore the future of digital experience design.
+    </p>
+    <button class="cta-btn">Get Started</button>
+  </div>
+  <div class="trusted">
+    <div class="trusted-title">Trusted by 100,000+ customers</div>
+    <div class="trusted-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Amazon_Web_Services_Logo.svg" alt="AWS">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
     </div>
   </div>
-  <div class="search-bar bordered">Search Bar</div>
-  <div class="main-banner bordered">
-    <img src="http://localhost:3845/assets/6e2a10974ecdd99250438712a92f7d15fd44238e.svg" alt="Banner Vector" style="z-index:1;">
-    <img src="http://localhost:3845/assets/b21bd41dca0b3ce57c593d47a344a7a487a9a7fb.svg" alt="Banner Vector" style="z-index:2;">
-    <div class="banner-text" style="z-index:3;">Main Banner</div>
+  <div class="features">
+    <div class="feature-card">
+      <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="AI Icon">
+      <h3>Personalized Experiences</h3>
+      <p>Leverage AI to deliver tailored content and recommendations for every user, increasing engagement and satisfaction.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://img.icons8.com/color/96/000000/robot-2.png" alt="Automation Icon">
+      <h3>Intelligent Automation</h3>
+      <p>Automate repetitive tasks and workflows, freeing up time for creative and strategic work.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://img.icons8.com/color/96/000000/brain.png" alt="Insights Icon">
+      <h3>Actionable Insights</h3>
+      <p>Gain deep insights into user behavior and preferences to inform design decisions and drive business growth.</p>
+    </div>
   </div>
-  <div class="featured bordered">Featured Products</div>
-  <div class="testimonials bordered">Customer Testimonials</div>
-  <div class="footer bordered">Footer</div>
-  <div class="additional-links bordered">Additional Links</div>
-  <div class="ai-chatbot-btn bordered">AI Chatbot Button</div>
+  <div class="footer">
+    &copy; 2024 AI in Digital Experience Design. All rights reserved.
+  </div>
 </body>
 </html>
