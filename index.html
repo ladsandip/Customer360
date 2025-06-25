@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Project</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <title>Customer 360</title>
+  <style>
+    body { margin: 0; font-family: Lato, Arial, sans-serif; background: #eef4ff; color: #181818; }
+    .customer360-bg { display: flex; flex-direction: column; min-height: 100vh; }
+    .global-header { display: flex; align-items: center; justify-content: space-between; background: #fff; height: 48px; padding: 0 32px; box-shadow: 0 3px 0 0 #ed1b46 inset; }
+    .logo img { height: 40px; }
+    .header-controls { display: flex; align-items: center; gap: 16px; }
+    .header-controls .avatar { background: #ed1b46; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+    .header-controls .avatar img { width: 16px; height: 16px; }
+    .header-controls .icon { width: 24px; height: 24px; }
+    .sidebar { position: fixed; top: 48px; left: 0; width: 240px; height: calc(100vh - 48px); background: #eef4ff; padding: 24px 12px; overflow-y: auto; box-shadow: 1px 0 0 0 #d9d9d9; z-index: 10; }
+    .profile { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .profile-pic { width: 40px; height: 40px; border-radius: 50%; background-size: cover; background-position: center; }
+    .profile-info { display: flex; flex-direction: column; }
+    .profile-name { font-weight: bold; font-size: 14px; color: #121212; }
+    .profile-location { font-size: 12px; color: #5c5c5c; }
+    .sidebar-cards { display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: #fff; border-radius: 3px; padding: 12px; box-shadow: 0 0 0 1px #d3e3ff; }
+    .card-title { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 12px; color: #121212; margin-bottom: 8px; }
+    .card-title .icon { width: 18px; height: 18px; }
+    .card-content { display: flex; flex-direction: column; gap: 4px; }
+    .info-row { display: flex; justify-content: space-between; font-size: 11px; color: #444444; }
+    .main-content { margin-left: 260px; padding: 32px 48px 32px 0; flex: 1; }
+    .main-tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+    .tab { background: #fff; border-radius: 3px 3px 0 0; padding: 8px 24px; font-size: 13px; color: #121212; cursor: pointer; border-bottom: 3px solid transparent; }
+    .tab.active { background: #eef4ff; color: #ed1b46; border-bottom: 3px solid #ed1b46; }
+    .customer-summary { background: #fff; border-radius: 3px; padding: 24px; margin-bottom: 24px; box-shadow: 0 0 0 1px #c9c9c9; }
+    .summary-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .summary-header .icon { width: 30px; height: 30px; background: #fe7298; border-radius: 4px; padding: 4px; }
+    .summary-title { font-weight: bold; font-size: 14px; color: #444444; }
+    .summary-subtitle { font-size: 12px; color: #444444; }
+    .summary-subtitle .highlight { color: #1b96ff; font-weight: bold; }
+    .summary-cards { display: flex; flex-direction: column; gap: 12px; }
+    .summary-card { background: #fff; border: 1px solid #c9c9c9; border-radius: 3px; padding: 12px; font-size: 12px; color: #121212; }
+    .card-row { display: flex; justify-content: space-between; font-weight: bold; color: #121212; margin-bottom: 4px; }
+    .card-desc { color: #121212; margin-bottom: 4px; }
+    .card-footer { color: #5c5c5c; font-size: 11px; }
+    .card-footer .highlight { color: #1b96ff; font-weight: bold; }
+  </style>
 </head>
 <body>
-    <h1>Welcome to my_project!</h1>
-    <p>Edit this HTML file to get started.</p>
+  <div class="customer360-bg">
+    <header class="global-header">
+      <div class="logo">
+        <img src="http://localhost:3845/assets/523f28b6ef761b8f65072109ea778db9ad3ee90e.svg" alt="Logo">
+      </div>
+      <div class="header-controls">
+        <div class="avatar">
+          <img src="http://localhost:3845/assets/c1e35c9f722d0c473f25bc18b2bd981b5229e317.svg" alt="Avatar">
+        </div>
+        <img src="http://localhost:3845/assets/5724b7253ba45b4658bfae9b4bbb5fb254f96f85.svg" alt="Notification" class="icon">
+        <img src="http://localhost:3845/assets/2da0263a07868625dba3b9fb22b5404095472187.svg" alt="Setup" class="icon">
+        <img src="http://localhost:3845/assets/9c2d610fde7bc595233026b9d6c965c044e70b78.svg" alt="Question" class="icon">
+        <img src="http://localhost:3845/assets/185ae25085abbdcb6c272338a00f65a4a9c1b647.svg" alt="Create" class="icon">
+        <img src="http://localhost:3845/assets/843b3701785b57e66a24406ca700eb9aa4483012.svg" alt="Favorite" class="icon">
+        <img src="http://localhost:3845/assets/4b7ca13b7881044eea5b90eb915d2aad3642de83.svg" alt="Favorite" class="icon">
+        <img src="http://localhost:3845/assets/d1cacc32aad601cc2e80edb5a660ca05192fe641.svg" alt="Down" class="icon">
+        <img src="http://localhost:3845/assets/7837e79779ba2f74fe8740fb7f914e07ddb39922.svg" alt="Favorite" class="icon">
+      </div>
+    </header>
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="profile-pic" style="background-image: url('http://localhost:3845/assets/cd4fe12f80ef238f9b644599b1f16af291deca3e.png');"></div>
+        <div class="profile-info">
+          <div class="profile-name">Sai Kishore</div>
+          <div class="profile-location">Mumbai, MH, IN</div>
+        </div>
+      </div>
+      <div class="sidebar-cards">
+        <div class="sidebar-card">
+          <div class="card-title"><img src="http://localhost:3845/assets/169a07ca27686af595d4f3a215b6de80e2719747.svg" class="icon"> Personal Information</div>
+          <div class="card-content">
+            <div class="info-row"><span>Gender</span><span>Male</span></div>
+            <div class="info-row"><span>Age Group</span><span>30-40</span></div>
+            <div class="info-row"><span>Preferred Pronouns</span><span>He/Him</span></div>
+            <div class="info-row"><span>Location</span><span>Mumbai</span></div>
+            <div class="info-row"><span>Email</span><span>sai.kishore123@gmail.com</span></div>
+            <div class="info-row"><span>Primary Contact</span><span>+91 9663523723</span></div>
+            <div class="info-row"><span>Alternate Contact</span><span>+91 9663523723</span></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="main-tabs">
+        <div class="tab active">Customer 360</div>
+        <div class="tab">Vehicle Owned - M&M</div>
+        <div class="tab">Vehicle Owned - Other OEM</div>
+      </div>
+      <section class="customer-summary">
+        <div class="summary-header">
+          <img src="http://localhost:3845/assets/fb6b89e34d40edc8a18617aaa0a1a445eeab8405.svg" class="icon">
+          <div>
+            <div class="summary-title">Customer Summary</div>
+            <div class="summary-subtitle">Mahindra Customer Since: <span class="highlight">23 Jun 2023 | 8 months 43 days</span></div>
+          </div>
+        </div>
+        <div class="summary-cards">
+          <div class="summary-card">
+            <div class="card-row"><span>Recent interaction with Mahindra | Online Channel</span><span>Channel: WhatsApp</span><span>25 Jan 2024</span></div>
+            <div class="card-desc">Customer used Mahindra Auto WhatsApp channel to share feedback about XUV700 test drive</div>
+            <div class="card-footer">Last Interaction: <span class="highlight">34 days ago</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
