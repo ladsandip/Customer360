@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Whitepace – Hero Banner</title>
+<title>Whitepace – Modern Landing Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700,800&display=swap" rel="stylesheet">
 <style>
 body {
 margin: 0;
 font-family: 'Inter', Arial, sans-serif;
-background: #043873;
-color: #fff;
+background: #f7f9fb;
+color: #191919;
 }
 .navbar {
 width: 100%;
@@ -85,6 +86,7 @@ font-weight: 700;
 margin-bottom: 1.5rem;
 letter-spacing: -1px;
 line-height: 1.1;
+color: #fff;
 }
 .hero-desc {
 font-size: 1.125rem;
@@ -126,6 +128,95 @@ width: 80%;
 height: 80%;
 object-fit: contain;
 }
+.features-section {
+background: #fff;
+padding: 4rem 2rem;
+max-width: 1200px;
+margin: 0 auto 2rem auto;
+border-radius: 2rem;
+box-shadow: 0 4px 32px rgba(4,56,115,0.06);
+}
+.features-title {
+text-align: center;
+font-size: 2rem;
+font-weight: 700;
+margin-bottom: 2.5rem;
+color: #043873;
+}
+.features-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+.feature-card {
+background: #f7f9fb;
+border-radius: 1.5rem;
+padding: 2rem;
+box-shadow: 0 2px 12px rgba(4,56,115,0.04);
+text-align: center;
+}
+.feature-icon {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+}
+.feature-title {
+font-size: 1.25rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+color: #043873;
+}
+.feature-desc {
+color: #4b5563;
+font-size: 1rem;
+}
+@media (min-width: 700px) {
+.features-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+.cta-section {
+background: #043873;
+color: #fff;
+text-align: center;
+padding: 3rem 2rem;
+border-radius: 2rem;
+max-width: 900px;
+margin: 3rem auto 2rem auto;
+box-shadow: 0 4px 32px rgba(4,56,115,0.08);
+}
+.cta-title {
+font-size: 2rem;
+font-weight: 700;
+margin-bottom: 1rem;
+}
+.cta-desc {
+font-size: 1.125rem;
+margin-bottom: 2rem;
+color: #e0e7ef;
+}
+.cta-btn {
+background: #4f9cf9;
+color: #fff;
+border: none;
+border-radius: 0.75rem;
+padding: 1rem 2.5rem;
+font-size: 1.125rem;
+font-weight: 600;
+cursor: pointer;
+transition: background 0.2s;
+}
+.cta-btn:hover {
+background: #3578e5;
+}
+.footer {
+background: #043873;
+color: #fff;
+text-align: center;
+padding: 2rem 1rem 1rem 1rem;
+border-radius: 2rem 2rem 0 0;
+font-size: 1rem;
+margin-top: 2rem;
+}
 @media (min-width: 900px) {
 .hero {
 flex-direction: row;
@@ -149,6 +240,9 @@ font-size: 1.7rem;
 width: 220px;
 height: 220px;
 }
+.features-section, .cta-section {
+padding: 2rem 1rem;
+}
 }
 </style>
 </head>
@@ -168,7 +262,7 @@ height: 220px;
 </div>
 </nav>
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" style="background:#043873;">
 <div class="hero-content">
 <div class="hero-title">Get More Done with whitepace</div>
 <div class="hero-desc">
@@ -184,5 +278,37 @@ Try Whitepace free
 <img src="https://via.placeholder.com/320x320?text=Hero+Image" alt="Hero visual" />
 </div>
 </section>
+<!-- Features Section -->
+<section class="features-section">
+<div class="features-title">Features</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🤝</div>
+<div class="feature-title">Collaborate in Real Time</div>
+<div class="feature-desc">Work together with your team seamlessly, wherever you are.</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📈</div>
+<div class="feature-title">Track Progress</div>
+<div class="feature-desc">Visualize tasks and milestones to stay on top of your projects.</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<div class="feature-title">Automate Workflows</div>
+<div class="feature-desc">Save time by automating repetitive tasks and processes.</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="cta-title">Ready to get started?</div>
+<div class="cta-desc">Try Whitepace free and boost your team's productivity today.</div>
+<button class="cta-btn">Start Free Trial</button>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="font-bold text-xl mb-2">whitepace</div>
+<div class="opacity-70">&copy; 2024 Whitepace. All rights reserved.</div>
+</footer>
 </body>
 </html>
