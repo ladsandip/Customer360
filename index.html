@@ -1,188 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AI in Digital Experience Design</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-      background: #fff;
-      color: #191619;
-    }
-    .section-label {
-      display: inline-block;
-      background: #effeff;
-      color: #0cbbc7;
-      font-size: 10px;
-      font-weight: 700;
-      border-radius: 60px;
-      padding: 4px 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-    .hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 24px 40px 24px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 800;
-      margin: 0 0 24px 0;
-      line-height: 1.1;
-    }
-    .hero p {
-      font-size: 22px;
-      color: #6b6b6b;
-      margin-bottom: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-btn {
-      background: #0cbbc7;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      padding: 16px 40px;
-      cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(12, 187, 199, 0.15);
-    }
-    .cta-btn:hover {
-      background: #099fa7;
-    }
-    .trusted {
-      background: #f7f7f7;
-      padding: 32px 0;
-      text-align: center;
-    }
-    .trusted-title {
-      color: #6b6b6b;
-      font-size: 16px;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-    .trusted-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .trusted-logos img {
-      height: 32px;
-      opacity: 0.7;
-      filter: grayscale(1);
-      transition: opacity 0.2s;
-    }
-    .trusted-logos img:hover {
-      opacity: 1;
-      filter: none;
-    }
-    .features {
-      max-width: 1200px;
-      margin: 64px auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-    }
-    .feature-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 16px rgba(12, 187, 199, 0.07);
-      padding: 32px 24px;
-      flex: 1 1 320px;
-      max-width: 360px;
-      min-width: 280px;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .feature-card img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      margin-bottom: 8px;
-    }
-    .feature-card h3 {
-      font-size: 22px;
-      font-weight: 700;
-      margin: 0 0 8px 0;
-    }
-    .feature-card p {
-      color: #6b6b6b;
-      font-size: 16px;
-      margin: 0;
-    }
-    .footer {
-      background: #0cbbc7;
-      color: #fff;
-      text-align: center;
-      padding: 32px 0 16px 0;
-      font-size: 16px;
-      margin-top: 64px;
-    }
-    @media (max-width: 900px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-      .feature-card {
-        max-width: 100%;
-      }
-      .hero h1 {
-        font-size: 36px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>AI in Digital Experience Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+--primary: #0cbbc7;
+--secondary: #effeff;
+--text-main: #191619;
+--text-muted: #6b6b6b;
+--bg-main: #fff;
+--bg-section: #f7f7f7;
+--radius: 16px;
+--shadow: 0 2px 16px rgba(12, 187, 199, 0.07);
+}
+body {
+margin: 0;
+font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+background: var(--bg-main);
+color: var(--text-main);
+}
+.section-label {
+display: inline-block;
+background: var(--secondary);
+color: var(--primary);
+font-size: 10px;
+font-weight: 700;
+border-radius: 60px;
+padding: 4px 16px;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 16px;
+}
+.hero {
+max-width: 1200px;
+margin: 0 auto;
+padding: 80px 24px 40px 24px;
+text-align: center;
+position: relative;
+z-index: 1;
+}
+.hero h1 {
+font-size: 56px;
+font-weight: 800;
+margin: 0 0 24px 0;
+line-height: 1.1;
+}
+.hero p {
+font-size: 22px;
+color: var(--text-muted);
+margin-bottom: 40px;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+.cta-btn {
+background: var(--primary);
+color: #fff;
+font-size: 18px;
+font-weight: 700;
+border: none;
+border-radius: 8px;
+padding: 16px 40px;
+cursor: pointer;
+transition: background 0.2s;
+box-shadow: 0 2px 8px rgba(12, 187, 199, 0.15);
+}
+.cta-btn:hover {
+background: #099fa7;
+}
+.trusted {
+background: var(--bg-section);
+padding: 32px 0;
+text-align: center;
+position: relative;
+z-index: 2;
+}
+.trusted-title {
+color: var(--text-muted);
+font-size: 16px;
+margin-bottom: 16px;
+font-weight: 600;
+}
+.trusted-logos {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap;
+}
+.trusted-logos img {
+height: 32px;
+opacity: 0.7;
+filter: grayscale(1);
+transition: opacity 0.2s;
+}
+.trusted-logos img:hover {
+opacity: 1;
+filter: none;
+}
+.features {
+max-width: 1200px;
+margin: 64px auto;
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+justify-content: center;
+position: relative;
+z-index: 3;
+}
+.feature-card {
+background: #fff;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 32px 24px;
+flex: 1 1 320px;
+max-width: 360px;
+min-width: 280px;
+text-align: left;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+position: relative;
+}
+.feature-card img {
+width: 48px;
+height: 48px;
+object-fit: contain;
+margin-bottom: 8px;
+}
+.feature-card h3 {
+font-size: 22px;
+font-weight: 700;
+margin: 0 0 8px 0;
+}
+.feature-card p {
+color: var(--text-muted);
+font-size: 16px;
+margin: 0;
+}
+.testimonials {
+background: var(--bg-section);
+padding: 64px 0;
+text-align: center;
+}
+.testimonials-title {
+font-size: 28px;
+font-weight: 700;
+margin-bottom: 32px;
+}
+.testimonial-list {
+display: flex;
+flex-wrap: wrap;
+gap: 32px;
+justify-content: center;
+max-width: 1000px;
+margin: 0 auto;
+}
+.testimonial-card {
+background: #fff;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 32px 24px;
+max-width: 320px;
+min-width: 260px;
+text-align: left;
+display: flex;
+flex-direction: column;
+gap: 16px;
+align-items: flex-start;
+}
+.testimonial-card .avatar {
+width: 48px;
+height: 48px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 8px;
+}
+.testimonial-card .name {
+font-weight: 700;
+font-size: 16px;
+}
+.testimonial-card .role {
+color: var(--text-muted);
+font-size: 14px;
+margin-bottom: 8px;
+}
+.testimonial-card .quote {
+font-style: italic;
+color: var(--text-muted);
+font-size: 15px;
+}
+.pricing {
+max-width: 1000px;
+margin: 64px auto;
+text-align: center;
+}
+.pricing-title {
+font-size: 28px;
+font-weight: 700;
+margin-bottom: 32px;
+}
+.pricing-tiers {
+display: flex;
+flex-wrap: wrap;
+gap: 32px;
+justify-content: center;
+}
+.pricing-card {
+background: #fff;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 32px 24px;
+max-width: 300px;
+min-width: 220px;
+text-align: left;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+}
+.pricing-card .tier {
+font-size: 18px;
+font-weight: 700;
+color: var(--primary);
+}
+.pricing-card .price {
+font-size: 32px;
+font-weight: 800;
+margin: 8px 0;
+}
+.pricing-card ul {
+padding-left: 18px;
+margin: 0 0 16px 0;
+color: var(--text-muted);
+font-size: 15px;
+}
+.pricing-card .select-btn {
+background: var(--primary);
+color: #fff;
+font-size: 16px;
+font-weight: 700;
+border: none;
+border-radius: 8px;
+padding: 12px 24px;
+cursor: pointer;
+transition: background 0.2s;
+margin-top: auto;
+}
+.pricing-card .select-btn:hover {
+background: #099fa7;
+}
+.faq {
+max-width: 800px;
+margin: 64px auto;
+padding: 0 16px;
+}
+.faq-title {
+font-size: 28px;
+font-weight: 700;
+margin-bottom: 32px;
+text-align: center;
+}
+.faq-list {
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.faq-item {
+background: #fff;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 24px 20px;
+}
+.faq-question {
+font-weight: 700;
+font-size: 16px;
+margin-bottom: 8px;
+}
+.faq-answer {
+color: var(--text-muted);
+font-size: 15px;
+}
+.footer {
+background: var(--primary);
+color: #fff;
+text-align: center;
+padding: 32px 0 16px 0;
+font-size: 16px;
+margin-top: 64px;
+position: relative;
+z-index: 4;
+}
+@media (max-width: 900px) {
+.features, .testimonial-list, .pricing-tiers {
+flex-direction: column;
+align-items: center;
+}
+.feature-card, .testimonial-card, .pricing-card {
+max-width: 100%;
+}
+.hero h1 {
+font-size: 36px;
+}
+}
+</style>
 </head>
 <body>
-  <div class="hero">
-    <div class="section-label">AI in Digital Experience Design</div>
-    <h1>Transforming Digital Experiences with AI</h1>
-    <p>
-      Discover how artificial intelligence is revolutionizing the way we design, build, and interact with digital products. From personalized user journeys to intelligent automation, explore the future of digital experience design.
-    </p>
-    <button class="cta-btn">Get Started</button>
-  </div>
-  <div class="trusted">
-    <div class="trusted-title">Trusted by 100,000+ customers</div>
-    <div class="trusted-logos">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Amazon_Web_Services_Logo.svg" alt="AWS">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
-    </div>
-  </div>
-  <div class="features">
-    <div class="feature-card">
-      <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="AI Icon">
-      <h3>Personalized Experiences</h3>
-      <p>Leverage AI to deliver tailored content and recommendations for every user, increasing engagement and satisfaction.</p>
-    </div>
-    <div class="feature-card">
-      <img src="https://img.icons8.com/color/96/000000/robot-2.png" alt="Automation Icon">
-      <h3>Intelligent Automation</h3>
-      <p>Automate repetitive tasks and workflows, freeing up time for creative and strategic work.</p>
-    </div>
-    <div class="feature-card">
-      <img src="https://img.icons8.com/color/96/000000/brain.png" alt="Insights Icon">
-      <h3>Actionable Insights</h3>
-      <p>Gain deep insights into user behavior and preferences to inform design decisions and drive business growth.</p>
-    </div>
-  </div>
-  <div class="footer">
-    &copy; 2024 AI in Digital Experience Design. All rights reserved.
-  </div>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+<div class="section-label">AI in Digital Experience Design</div>
+<h1>Transforming Digital Experiences with AI</h1>
+<p>
+Discover how artificial intelligence is revolutionizing the way we design, build, and interact with digital products. From personalized user journeys to intelligent automation, explore the future of digital experience design.
+</p>
+<button class="cta-btn">Get Started</button>
+</section>
+<!-- Trusted By Section -->
+<section class="trusted" id="trusted">
+<div class="trusted-title">Trusted by 100,000+ customers</div>
+<div class="trusted-logos">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Amazon_Web_Services_Logo.svg" alt="AWS">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+</div>
+</section>
+<!-- Features Section -->
+<section class="features" id="features">
+<div class="feature-card">
+<img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="AI Icon">
+<h3>Personalized Experiences</h3>
+<p>Leverage AI to deliver tailored content and recommendations for every user, increasing engagement and satisfaction.</p>
+</div>
+<div class="feature-card">
+<img src="https://img.icons8.com/color/96/000000/robot-2.png" alt="Automation Icon">
+<h3>Intelligent Automation</h3>
+<p>Automate repetitive tasks and workflows, freeing up time for creative and strategic work.</p>
+</div>
+<div class="feature-card">
+<img src="https://img.icons8.com/color/96/000000/brain.png" alt="Insights Icon">
+<h3>Actionable Insights</h3>
+<p>Gain deep insights into user behavior and preferences to inform design decisions and drive business growth.</p>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+<div class="testimonials-title">What Our Customers Say</div>
+<div class="testimonial-list">
+<div class="testimonial-card">
+<img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Doe">
+<div class="name">Jane Doe</div>
+<div class="role">Product Manager, TechCorp</div>
+<div class="quote">"The AI-driven insights have completely transformed our product strategy. Highly recommended!"</div>
+</div>
+<div class="testimonial-card">
+<img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith">
+<div class="name">John Smith</div>
+<div class="role">UX Designer, Creatives Inc.</div>
+<div class="quote">"Personalization features helped us boost user engagement by 40% in just three months."</div>
+</div>
+<div class="testimonial-card">
+<img class="avatar" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Alex Lee">
+<div class="name">Alex Lee</div>
+<div class="role">CTO, InnovateX</div>
+<div class="quote">"Automation tools saved our team countless hours. The platform is intuitive and powerful."</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="pricing" id="pricing">
+<div class="pricing-title">Simple, Transparent Pricing</div>
+<div class="pricing-tiers">
+<div class="pricing-card">
+<div class="tier">Starter</div>
+<div class="price">$0<span style="font-size:16px;font-weight:400;">/mo</span></div>
+<ul>
+<li>Basic AI features</li>
+<li>Email support</li>
+<li>Up to 3 projects</li>
+</ul>
+<button class="select-btn">Choose Starter</button>
+</div>
+<div class="pricing-card">
+<div class="tier">Pro</div>
+<div class="price">$29<span style="font-size:16px;font-weight:400;">/mo</span></div>
+<ul>
+<li>All Starter features</li>
+<li>Advanced analytics</li>
+<li>Priority support</li>
+<li>Unlimited projects</li>
+</ul>
+<button class="select-btn">Choose Pro</button>
+</div>
+<div class="pricing-card">
+<div class="tier">Enterprise</div>
+<div class="price">Contact Us</div>
+<ul>
+<li>All Pro features</li>
+<li>Custom integrations</li>
+<li>Dedicated account manager</li>
+</ul>
+<button class="select-btn">Contact Sales</button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="faq" id="faq">
+<div class="faq-title">Frequently Asked Questions</div>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-question">How does AI improve digital experience design?</div>
+<div class="faq-answer">AI enables personalized content, automates repetitive tasks, and provides actionable insights, making digital experiences more engaging and efficient.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Can I try the platform for free?</div>
+<div class="faq-answer">Yes! Our Starter plan is free and lets you explore basic AI features with up to 3 projects.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Is my data secure?</div>
+<div class="faq-answer">Absolutely. We use industry-standard security practices to keep your data safe and private.</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer" id="footer">
+&copy; 2024 AI in Digital Experience Design. All rights reserved.
+</footer>
 </body>
 </html>
