@@ -2,130 +2,329 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Whitepace Landing Page</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans:500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Sandip Lad - Senior Design Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #fff;
+      --sidebar-bg: #f7f7f7;
+      --accent: #222;
+      --primary: #2d5be3;
+      --gray: #888;
+      --border: #e0e0e0;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--main-bg);
+      color: var(--accent);
+    }
+    header {
+      background: var(--main-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 32px 0 32px;
+      font-size: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto 0 auto;
+      background: var(--main-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+    .sidebar {
+      background: var(--sidebar-bg);
+      flex: 0 0 320px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid var(--border);
+    }
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 24px;
+      border: 2px solid var(--primary);
+    }
+    .sidebar h1 {
+      font-size: 1.6rem;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+    }
+    .sidebar h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 16px 0;
+      text-align: center;
+    }
+    .sidebar p {
+      color: var(--gray);
+      font-size: 1rem;
+      margin: 0 0 16px 0;
+      text-align: center;
+    }
+    .sidebar .linkedin {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .sidebar .linkedin a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: text-decoration 0.2s;
+    }
+    .sidebar .linkedin a:hover {
+      text-decoration: underline;
+    }
+    .main-content {
+      flex: 1 1 0;
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .section {
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .section ul, .section ol {
+      margin: 0 0 0 20px;
+      padding: 0;
+    }
+    .section li {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+    .section .item-title {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .section .item-sub {
+      color: var(--gray);
+      font-size: 0.98em;
+      margin-left: 4px;
+    }
+    .section .item-desc {
+      color: var(--gray);
+      font-size: 0.97em;
+      margin-left: 0;
+      margin-bottom: 8px;
+    }
+    .key-expertise, .industry-domain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 32px;
+      margin-bottom: 8px;
+    }
+    .key-expertise span, .industry-domain span {
+      background: #f0f4ff;
+      color: var(--primary);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.98em;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .footer {
+      max-width: 1200px;
+      margin: 40px auto 0 auto;
+      padding: 24px 0 16px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.98em;
+    }
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        flex: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 32px 16px;
+      }
+      .main-content {
+        padding: 32px 16px;
+      }
+    }
+    @media (max-width: 600px) {
+      nav {
+        padding: 16px 8px 0 8px;
+      }
+      .container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .sidebar, .main-content {
+        padding: 20px 6px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-content">
-      <div class="logo">
-        <img src="http://localhost:3845/assets/13ebd2971aac9f4ffcdeec48ba9c7a6e6927c796.svg" alt="Whitepace Logo" class="logo-icon">
-        <span class="logo-text">whitepace</span>
-      </div>
-      <nav class="nav-menu">
-        <div class="nav-item">Products <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
-        <div class="nav-item">Solutions <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
-        <div class="nav-item">Resources <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
-        <div class="nav-item">Pricing <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
-      </nav>
-      <div class="header-buttons">
-        <button class="btn btn-login">Login</button>
-        <button class="btn btn-free">
-          Try Whitepace free
-          <img src="http://localhost:3845/assets/ff8a353b469cc2a8b0a6f2feab9ab7ab31612a59.svg" class="btn-icon">
-        </button>
-      </div>
-    </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact Me</a></li>
+        <li><a href="#">HN</a> | <a href="#">EN</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <!-- Main Body -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Get More Done with whitepace</h1>
-          <p>Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks</p>
-          <button class="btn btn-free">
-            Try Whitepace free
-            <img src="http://localhost:3845/assets/ff8a353b469cc2a8b0a6f2feab9ab7ab31612a59.svg" class="btn-icon">
-          </button>
-        </div>
-        <div class="hero-image">
-          <img src="http://localhost:3845/assets/d1c1c685ba169753f4f2982311e20e191d784b22.png" alt="Section Image">
-        </div>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="https://i.imgur.com/0y0y0y0.png" alt="Sandip Lad Photo">
+      <!-- Replace the src above with your actual photo URL -->
+      <h1>Sandip Lad</h1>
+      <h2>Senior Design Lead</h2>
+      <p>
+        Sandip Lad has 13+ years of expertise across UX Strategy, Planning and Design. Also, Over 6 years of experience in Team Building and Mentoring; Led a 10+ member design team in the past.<br><br>
+        In his last assignment, he has worked across CX and DX channels to revamp existing digital footprint and drive digital transformation.<br><br>
+        He is adept at optimizing user experiences for B2C and B2B applications.<br><br>
+        So far, Sandip has worked across diverse industries such as IT Service, Telecommunication, Pharma Manufacturing/IoT, Automotive Manufacturing/Digital.
+      </p>
+      <div class="linkedin">
+        Follow Sandip on <a href="https://www.linkedin.com/in/sandip-lad-ux/" target="_blank">LinkedIn</a>
       </div>
-      <!-- Decorative Vectors (optional, can be added as background images if needed) -->
-    </section>
-
-    <!-- Free Trial Section -->
-    <section class="free-trial-section">
-      <div class="free-trial-content">
-        <h2>Try Whitepace today</h2>
-        <p>Get started for free.<br>Add your whole team as your needs grow.</p>
-        <button class="btn btn-free">
-          Try Taskey free
-          <img src="http://localhost:3845/assets/0630baa5514c257093dcaba0d35169707836436e.svg" class="btn-icon">
-        </button>
-        <div class="contact-sales">On a big team? Contact sales</div>
-        <div class="app-icons">
-          <img src="http://localhost:3845/assets/66942daf0dfdb0c067bd83ee5d553f3f0bc0bb5a.svg" alt="Apple" class="app-icon">
-          <img src="http://localhost:3845/assets/e7475abe5601c70ad53719b03e900033f737ed8a.svg" alt="Windows" class="app-icon">
-          <img src="http://localhost:3845/assets/57a78a1d7f9f46a086c10f441cdfe11191d1ab87.svg" alt="Android" class="app-icon">
+    </aside>
+    <main class="main-content">
+      <section class="section">
+        <div class="section-title">Degree & Education</div>
+        <ul>
+          <li><span class="item-title">CXA</span> <span class="item-sub">(Certified User Experience Analyst)</span> - Human Factors International, India</li>
+          <li><span class="item-title">CUA</span> <span class="item-sub">(Certified Usability Analyst)</span> - Human Factors International, India</li>
+          <li><span class="item-title">Master of Technology</span> <span class="item-sub">(Mechanical Engineering)</span> - NIT Karnataka, Surathkal, India</li>
+        </ul>
+      </section>
+      <section class="section">
+        <div class="section-title">Employment History</div>
+        <ul>
+          <li><span class="item-title">Frog India</span> (May 2023 – Present) – Senior Design Manager</li>
+          <li><span class="item-title">Merittrac</span> (Sep 2022 – May 2023) – Senior Manager UX Specialist</li>
+          <li><span class="item-title">Acuitec (Capita group plc)</span> (Jan 2019 – Jan 2022) – Assistant Manager – UX</li>
+          <li><span class="item-title">Reliance Jio Infocomm</span> (Jan 2016 – Jan 2019) – Manager – UX</li>
+          <li><span class="item-title">HCL Technologies</span> (Nov 2011 – Jan 2016) – Lead Designer</li>
+        </ul>
+      </section>
+      <section class="section">
+        <div class="section-title">Key Expertise</div>
+        <div class="key-expertise">
+          <span>Design Research & Synthesis</span>
+          <span>Experience Design</span>
+          <span>Design Execution</span>
+          <span>CI Strategy</span>
+          <span>Design Strategy</span>
+          <span>Prototyping</span>
+          <span>Feedback Facilitation</span>
+          <span>Rapid Prototyping</span>
+          <span>Cross Functional Collaboration</span>
+          <span>Team Mentorship</span>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
+      </section>
+      <section class="section">
+        <div class="section-title">Industry Domain</div>
+        <div class="industry-domain">
+          <span>Automotive Manufacturing</span>
+          <span>Pharma Manufacturing</span>
+          <span>Telecom</span>
+          <span>IT Service</span>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-title">Past Experience</div>
+        <ul>
+          <li>
+            <span class="item-title">CX | ZEE5 Website</span> – <span class="item-sub">auto.zee5.com (2021-24)</span>
+            <div class="item-desc">
+              <b>Objective:</b> Redefining the experience of media ecosystem website.<br>
+              <b>Design Activities:</b> Stakeholder Interview, User Analytics Report, Google Analytics + Competitive Analysis, Persona Identification, Task Flow, Ideation & Design. Course improvement session with CX, Domain feedback/Analytics reports.<br>
+              <b>Impact:</b> Increase in watch hours and 7% reduction in bounce rate, increase in new users.
+            </div>
+          </li>
+          <li>
+            <span class="item-title">CX | Jio Companion App – MDM (Android for You) (2021-24)</span>
+            <div class="item-desc">
+              <b>Design Activities:</b> Ideation and design of key user journeys. Optimization of introduction and onboarding flow. Redesigned visual statement, including graphics and branding.<br>
+              <b>Impact:</b> Higher branding improved to 4.6/5.0 and App store rating improved to 4.6. Active users increased by 22%.
+            </div>
+          </li>
+          <li>
+            <span class="item-title">DX | Jio Apps – Sales Genie and Card capture (2022-23)</span>
+            <div class="item-desc">
+              <b>Role:</b> Design Lead<br>
+              <b>Design Activities:</b> End-to-end design for Android/iOS<br>
+              <b>Impact:</b> 3x faster lead capture flow. Flow rating improved to 3.9 to 4.7, 20% CSAT.
+            </div>
+          </li>
+          <li>
+            <span class="item-title">DX | Jio Web Portal – Doxins DMS (Dealer Management System) (2021-24)</span>
+            <div class="item-desc">
+              <b>Objective:</b> Design of Dealer Management System.<br>
+              <b>Design Activities:</b> User research, ideation and design of key user journeys, determination of introduction and onboarding flow features. Redesigned visual statement, including graphics and branding.<br>
+              <b>Impact:</b> 100% task adoption, reduced bounce from 50% to under 20%, 250+ active users, INR ticket value 40%+ and monthly installs increased.
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-info">
-        <div class="footer-logo-desc">
-          <div class="logo">
-            <img src="http://localhost:3845/assets/13ebd2971aac9f4ffcdeec48ba9c7a6e6927c796.svg" alt="Whitepace Logo" class="logo-icon">
-            <span class="logo-text">whitepace</span>
-          </div>
-          <p class="footer-desc">whitepace was created for the new ways we live and work. We make a better workspace around the world</p>
-        </div>
-        <div class="footer-col">
-          <div class="footer-title">Product</div>
-          <div class="footer-link highlight">Overview</div>
-          <div class="footer-link">Pricing</div>
-          <div class="footer-link">Customer stories</div>
-        </div>
-        <div class="footer-col">
-          <div class="footer-title">Resources</div>
-          <div class="footer-link">Blog</div>
-          <div class="footer-link">Guides & tutorials</div>
-          <div class="footer-link">Help center</div>
-        </div>
-        <div class="footer-col">
-          <div class="footer-title">Company</div>
-          <div class="footer-link">About us</div>
-          <div class="footer-link">Careers</div>
-          <div class="footer-link">Media kit</div>
-        </div>
-        <div class="footer-cta">
-          <div class="footer-cta-title">Try It Today</div>
-          <div class="footer-cta-desc">Get started for free. Add your whole team as your needs grow.</div>
-          <button class="btn btn-free">
-            Start today
-            <img src="http://localhost:3845/assets/0630baa5514c257093dcaba0d35169707836436e.svg" class="btn-icon">
-          </button>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-terms">
-          <img src="http://localhost:3845/assets/63f0d7d591a957a01181ee5615d46fb64a99259a.svg" class="footer-lang-icon">
-          <span>English</span>
-          <img src="http://localhost:3845/assets/5f25f359e2c7536462f5e0e747a94fabf7fe6cd6.svg" class="footer-arrow">
-          <span>Terms & privacy</span>
-          <span>Security</span>
-          <span>Status</span>
-          <span>©2021 Whitepace LLC.</span>
-        </div>
-        <div class="footer-social">
-          <img src="http://localhost:3845/assets/aee0cec0bb0e9e544d3e8ba18e4bad6e72db025d.svg" alt="Facebook" class="footer-social-icon">
-          <img src="http://localhost:3845/assets/274aea0a8022e76cf198ad0016ad8fe45a197cc8.svg" alt="Twitter" class="footer-social-icon">
-          <img src="http://localhost:3845/assets/8147697d7e9b070fc282e784bd38e7eee6730470.svg" alt="LinkedIn" class="footer-social-icon">
-        </div>
-      </div>
-      <img src="http://localhost:3845/assets/b88f8f6207ccb83f4c456c65cc6061ae540d432a.svg" class="footer-line">
-    </div>
+    Sandip Lad. All rights reserved. &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/sandip-lad-ux/" target="_blank">LinkedIn</a>
   </footer>
 </body>
 </html>
