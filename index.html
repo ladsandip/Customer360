@@ -1,31 +1,186 @@
-<!-- Example: Hero Section -->
-<div class="hero-section">
-  <header class="header">
-    <div class="logo">
-      <img src="logo.svg" alt="whitepace logo" />
-      <span>whitepace</span>
-    </div>
-    <nav>
-      <ul>
-        <li>Products</li>
-        <li>Solutions</li>
-        <li>Resources</li>
-        <li>Pricing</li>
-      </ul>
-      <div class="header-buttons">
-        <button class="login-btn">Login</button>
-        <button class="trial-btn">Try Whitepace free</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circle Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Raleway:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      box-sizing: border-box;
+    }
+    .circle-homepage {
+      position: relative;
+      width: 1440px;
+      min-height: 6000px;
+      margin: 0 auto;
+      background: #fff;
+    }
+    /* Example for a section (Hero) */
+    .hero-section {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      width: 1440px;
+      height: 719px;
+      background: #edfeff;
+      overflow: hidden;
+    }
+    .hero-bg-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1440px;
+      height: 550px;
+      opacity: 0.1;
+      background: url('http://localhost:3845/assets/dd1776e10f7e5a1c3f86907672131d3d0bde0d24.png') no-repeat left bottom;
+      background-size: 122.15% 182.62%;
+    }
+    .hero-title {
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      width: 779px;
+      transform: translateX(-50%);
+      color: #191619;
+      font-size: 44px;
+      font-weight: 700;
+      text-align: center;
+      line-height: normal;
+    }
+    .hero-desc {
+      position: absolute;
+      left: 50%;
+      top: 180px;
+      width: 447px;
+      transform: translateX(-50%);
+      color: #878787;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 22px;
+    }
+    .hero-btn {
+      position: absolute;
+      left: 50%;
+      top: 254px;
+      transform: translateX(-50%);
+      background: #0cbbc7;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 0.16px;
+    }
+    /* Add more sections below, following the same pattern */
+    /* ... */
+    /* Example for a trusted by section */
+    .trusted-by-section {
+      position: absolute;
+      left: 150px;
+      top: 885px;
+      width: 1140px;
+      height: 219px;
+      background: none;
+    }
+    .trusted-by-title {
+      position: absolute;
+      left: 50%;
+      top: 33px;
+      transform: translateX(-50%);
+      color: #000;
+      font-size: 28px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .trusted-by-title b {
+      font-weight: 700;
+    }
+    .trusted-by-logos {
+      position: absolute;
+      left: 0;
+      top: 98px;
+      width: 100%;
+      height: 73px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .trusted-by-logos img {
+      height: 30px;
+      object-fit: contain;
+      background: none;
+      margin: 0 10px;
+    }
+    /* ... More CSS for badges, awards, testimonials, footer, etc ... */
+    /* Footer Example */
+    .footer-section {
+      position: absolute;
+      left: 0;
+      top: 5472px;
+      width: 1440px;
+      height: 524px;
+      background: #232323;
+      color: #fff;
+    }
+    .footer-copyright {
+      position: absolute;
+      left: 150px;
+      bottom: 30px;
+      color: #9b9b9b;
+      font-size: 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 400;
+    }
+    /* ... Continue for all other sections ... */
+  </style>
+</head>
+<body>
+  <div class="circle-homepage">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-bg-img"></div>
+      <div class="hero-title">
+        A powerful online engagement tool that's intuitive and simple to use.
       </div>
-    </nav>
-  </header>
-  <section class="hero-content">
-    <div class="hero-text">
-      <h1>Get More Done with whitepace</h1>
-      <p>Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks</p>
-      <button class="trial-btn">Try Whitepace free</button>
+      <div class="hero-desc">
+        With stellar one-click reports and unmatched support, see how Circle will make a difference in your business.
+      </div>
+      <button class="hero-btn">Get started free</button>
+      <!-- Add hero images, masks, etc. as needed -->
     </div>
-    <div class="hero-image">
-      <!-- Place hero illustration here -->
+    <!-- Trusted By Section -->
+    <div class="trusted-by-section">
+      <div class="trusted-by-title">
+        Trusted by <b>100,000+ customers</b> in 90+ countries
+      </div>
+      <div class="trusted-by-logos">
+        <img src="http://localhost:3845/assets/c19b6ba0381ab51708ccda05c8c9a4a8dfc22e40.png" alt="Logo 1">
+        <img src="http://localhost:3845/assets/1f8a89a457359b372de8a415e0cbc1c582db158f.png" alt="Logo 2">
+        <img src="http://localhost:3845/assets/2f73d038bf0921a83458082bc6f539d6171678ca.png" alt="Logo 3">
+        <img src="http://localhost:3845/assets/0bc91b51b65dbf83724259c913f4d6f0ec168119.png" alt="Logo 4">
+        <img src="http://localhost:3845/assets/bb096e1f913dce6bb0c66bc2f94f2a0b1cbb07cf.png" alt="Logo 5">
+        <img src="http://localhost:3845/assets/f1d09a18233486dedcc0bfb29437666d52f4dbb0.png" alt="Logo 6">
+      </div>
+      <!-- Add badges, backgrounds, etc. as needed -->
     </div>
-  </section>
-</div>
+    <!-- ... Add all other sections here, following the Figma structure ... -->
+    <!-- Footer Section -->
+    <div class="footer-section">
+      <div class="footer-copyright">
+        Copyright 2022 Circle. All rights reserved.
+      </div>
+      <!-- Add more footer content as per Figma -->
+    </div>
+  </div>
+</body>
+</html> 
