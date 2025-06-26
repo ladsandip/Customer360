@@ -2,185 +2,443 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Circle Homepage</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Raleway:wght@500&display=swap" rel="stylesheet">
+  <title>Whitepace Landing Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      box-sizing: border-box;
-    }
-    .circle-homepage {
-      position: relative;
-      width: 1440px;
-      min-height: 6000px;
-      margin: 0 auto;
-      background: #fff;
-    }
-    /* Example for a section (Hero) */
-    .hero-section {
-      position: absolute;
-      left: 0;
-      top: 80px;
-      width: 1440px;
-      height: 719px;
-      background: #edfeff;
-      overflow: hidden;
-    }
-    .hero-bg-img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 1440px;
-      height: 550px;
-      opacity: 0.1;
-      background: url('http://localhost:3845/assets/dd1776e10f7e5a1c3f86907672131d3d0bde0d24.png') no-repeat left bottom;
-      background-size: 122.15% 182.62%;
-    }
-    .hero-title {
-      position: absolute;
-      left: 50%;
-      top: 50px;
-      width: 779px;
-      transform: translateX(-50%);
-      color: #191619;
-      font-size: 44px;
-      font-weight: 700;
-      text-align: center;
-      line-height: normal;
-    }
-    .hero-desc {
-      position: absolute;
-      left: 50%;
-      top: 180px;
-      width: 447px;
-      transform: translateX(-50%);
-      color: #878787;
-      font-size: 14px;
-      font-weight: 400;
-      text-align: center;
-      line-height: 22px;
-    }
-    .hero-btn {
-      position: absolute;
-      left: 50%;
-      top: 254px;
-      transform: translateX(-50%);
-      background: #0cbbc7;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 14px 40px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      letter-spacing: 0.16px;
-    }
-    /* Add more sections below, following the same pattern */
-    /* ... */
-    /* Example for a trusted by section */
-    .trusted-by-section {
-      position: absolute;
-      left: 150px;
-      top: 885px;
-      width: 1140px;
-      height: 219px;
-      background: none;
-    }
-    .trusted-by-title {
-      position: absolute;
-      left: 50%;
-      top: 33px;
-      transform: translateX(-50%);
-      color: #000;
-      font-size: 28px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
-      text-align: center;
-      white-space: nowrap;
-    }
-    .trusted-by-title b {
-      font-weight: 700;
-    }
-    .trusted-by-logos {
-      position: absolute;
-      left: 0;
-      top: 98px;
-      width: 100%;
-      height: 73px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
-    .trusted-by-logos img {
-      height: 30px;
-      object-fit: contain;
-      background: none;
-      margin: 0 10px;
-    }
-    /* ... More CSS for badges, awards, testimonials, footer, etc ... */
-    /* Footer Example */
-    .footer-section {
-      position: absolute;
-      left: 0;
-      top: 5472px;
-      width: 1440px;
-      height: 524px;
-      background: #232323;
-      color: #fff;
-    }
-    .footer-copyright {
-      position: absolute;
-      left: 150px;
-      bottom: 30px;
-      color: #9b9b9b;
-      font-size: 12px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
-    }
-    /* ... Continue for all other sections ... */
+    /* Paste the CSS from below here */
+    body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #043873;
+}
+.landing-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+}
+.header {
+  width: 100%;
+  background: #043873;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 220px;
+  width: 1920px;
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-icon {
+  width: 37px;
+  height: 29px;
+}
+.logo-text {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+.nav-menu {
+  display: flex;
+  gap: 60px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nav-arrow {
+  width: 29px;
+  height: 24px;
+}
+.header-buttons {
+  display: flex;
+  gap: 24px;
+}
+.btn {
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-login {
+  background: #ffe492;
+  color: #043873;
+}
+.btn-free {
+  background: #4f9cf9;
+  color: #fff;
+}
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+.main-body {
+  margin-top: 92px;
+}
+.hero-section {
+  background: #043873;
+  width: 100vw;
+  padding: 140px 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 1480px;
+  gap: 60px;
+}
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #fff;
+}
+.hero-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1.28px;
+}
+.hero-desc {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.36px;
+  margin-bottom: 24px;
+}
+.hero-image {
+  width: 824px;
+  height: 549px;
+  background: #c4defd;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.trial-section {
+  background: #4f9cf9;
+  width: 100vw;
+  padding: 140px 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trial-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1480px;
+}
+.trial-inner h2 {
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1.44px;
+  text-align: center;
+}
+.trial-desc {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.48px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.trial-contact {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 16px;
+}
+.trial-apps {
+  display: flex;
+  gap: 40px;
+  margin-top: 24px;
+}
+.app-icon {
+  width: 60px;
+  height: 60px;
+}
+.footer {
+  width: 100vw;
+  background: #043873;
+  position: absolute;
+  left: 0;
+  top: 1626px;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 140px 220px 32px 220px;
+  width: 1920px;
+  margin: 0 auto;
+  gap: 80px;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  width: 1480px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.footer-logo-desc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #fff;
+}
+.footer-desc {
+  color: #f7f7ee;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  width: 240px;
+}
+.footer-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #fff;
+}
+.footer-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+}
+.footer-link {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  color: #fff;
+}
+.footer-link.highlight {
+  color: #ffe492;
+}
+.footer-cta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  color: #fff;
+}
+.footer-cta-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+}
+.footer-cta-desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  width: 259px;
+}
+.footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1480px;
+  align-items: center;
+  margin-top: 40px;
+}
+.footer-lang {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #fff;
+  font-size: 16px;
+}
+.lang-icon {
+  width: 19px;
+  height: 19px;
+}
+.lang-arrow {
+  width: 20px;
+  height: 14px;
+}
+.footer-social {
+  display: flex;
+  gap: 32px;
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+.footer-line {
+  width: 1480px;
+  height: 1px;
+  margin-top: 32px;
+}
+@media (max-width: 1600px) {
+  .header-inner, .footer-inner, .main-body, .hero-section, .trial-section {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100vw;
+  }
+  .footer-content, .footer-bottom {
+    width: 100%;
+  }
+}
   </style>
 </head>
 <body>
-  <div class="circle-homepage">
-    <!-- Hero Section -->
-    <div class="hero-section">
-      <div class="hero-bg-img"></div>
-      <div class="hero-title">
-        A powerful online engagement tool that's intuitive and simple to use.
+  <div class="landing-page">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <img src="http://localhost:3845/assets/13ebd2971aac9f4ffcdeec48ba9c7a6e6927c796.svg" alt="Whitepace Logo" class="logo-icon">
+          <span class="logo-text">whitepace</span>
+        </div>
+        <nav class="nav-menu">
+          <div class="nav-item">Products <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
+          <div class="nav-item">Solutions <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
+          <div class="nav-item">Resources <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
+          <div class="nav-item">Pricing <img src="http://localhost:3845/assets/6ebfca4ae75b0817e10de68d40af2f62644e6e2b.svg" class="nav-arrow"></div>
+        </nav>
+        <div class="header-buttons">
+          <button class="btn btn-login">Login</button>
+          <button class="btn btn-free">
+            Try Whitepace free
+            <img src="http://localhost:3845/assets/ff8a353b469cc2a8b0a6f2feab9ab7ab31612a59.svg" class="btn-icon">
+          </button>
+        </div>
       </div>
-      <div class="hero-desc">
-        With stellar one-click reports and unmatched support, see how Circle will make a difference in your business.
+    </header>
+
+    <!-- Main Body -->
+    <main class="main-body">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <h1>Get More Done with whitepace</h1>
+            <p class="hero-desc">
+              Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks
+            </p>
+            <button class="btn btn-free">
+              Try Whitepace free
+              <img src="http://localhost:3845/assets/ff8a353b469cc2a8b0a6f2feab9ab7ab31612a59.svg" class="btn-icon">
+            </button>
+          </div>
+          <div class="hero-image"></div>
+        </div>
+        <!-- Decorative SVGs can be added here as <img> if needed -->
+      </section>
+
+      <!-- Free Trial Section -->
+      <section class="trial-section">
+        <div class="trial-inner">
+          <h2>Try Whitepace today</h2>
+          <p class="trial-desc">
+            Get started for free.<br>
+            Add your whole team as your needs grow.
+          </p>
+          <button class="btn btn-free">
+            Try Taskey free
+            <img src="http://localhost:3845/assets/0630baa5514c257093dcaba0d35169707836436e.svg" class="btn-icon">
+          </button>
+          <div class="trial-contact">On a big team? Contact sales</div>
+          <div class="trial-apps">
+            <img src="http://localhost:3845/assets/66942daf0dfdb0c067bd83ee5d553f3f0bc0bb5a.svg" alt="Apple" class="app-icon">
+            <img src="http://localhost:3845/assets/e7475abe5601c70ad53719b03e900033f737ed8a.svg" alt="Windows" class="app-icon">
+            <img src="http://localhost:3845/assets/57a78a1d7f9f46a086c10f441cdfe11191d1ab87.svg" alt="Android" class="app-icon">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-content">
+          <div class="footer-logo-desc">
+            <div class="logo">
+              <img src="http://localhost:3845/assets/13ebd2971aac9f4ffcdeec48ba9c7a6e6927c796.svg" alt="Whitepace Logo" class="logo-icon">
+              <span class="logo-text">whitepace</span>
+            </div>
+            <div class="footer-desc">
+              whitepace was created for the new ways we live and work. We make a better workspace around the world
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="footer-title">Product</div>
+            <div class="footer-link highlight">Overview</div>
+            <div class="footer-link">Pricing</div>
+            <div class="footer-link">Customer stories</div>
+          </div>
+          <div class="footer-col">
+            <div class="footer-title">Resources</div>
+            <div class="footer-link">Blog</div>
+            <div class="footer-link">Guides & tutorials</div>
+            <div class="footer-link">Help center</div>
+          </div>
+          <div class="footer-col">
+            <div class="footer-title">Company</div>
+            <div class="footer-link">About us</div>
+            <div class="footer-link">Careers</div>
+            <div class="footer-link">Media kit</div>
+          </div>
+          <div class="footer-cta">
+            <div class="footer-cta-title">Try It Today</div>
+            <div class="footer-cta-desc">Get started for free. Add your whole team as your needs grow.</div>
+            <button class="btn btn-free">
+              Start today
+              <img src="http://localhost:3845/assets/0630baa5514c257093dcaba0d35169707836436e.svg" class="btn-icon">
+            </button>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-lang">
+            <img src="http://localhost:3845/assets/63f0d7d591a957a01181ee5615d46fb64a99259a.svg" class="lang-icon">
+            <span>English</span>
+            <img src="http://localhost:3845/assets/5f25f359e2c7536462f5e0e747a94fabf7fe6cd6.svg" class="lang-arrow">
+            <span>Terms & privacy</span>
+            <span>Security</span>
+            <span>Status</span>
+            <span>©2021 Whitepace LLC.</span>
+          </div>
+          <div class="footer-social">
+            <img src="http://localhost:3845/assets/aee0cec0bb0e9e544d3e8ba18e4bad6e72db025d.svg" alt="Facebook" class="social-icon">
+            <img src="http://localhost:3845/assets/274aea0a8022e76cf198ad0016ad8fe45a197cc8.svg" alt="Twitter" class="social-icon">
+            <img src="http://localhost:3845/assets/8147697d7e9b070fc282e784bd38e7eee6730470.svg" alt="LinkedIn" class="social-icon">
+          </div>
+        </div>
+        <img src="http://localhost:3845/assets/b88f8f6207ccb83f4c456c65cc6061ae540d432a.svg" class="footer-line">
       </div>
-      <button class="hero-btn">Get started free</button>
-      <!-- Add hero images, masks, etc. as needed -->
-    </div>
-    <!-- Trusted By Section -->
-    <div class="trusted-by-section">
-      <div class="trusted-by-title">
-        Trusted by <b>100,000+ customers</b> in 90+ countries
-      </div>
-      <div class="trusted-by-logos">
-        <img src="http://localhost:3845/assets/c19b6ba0381ab51708ccda05c8c9a4a8dfc22e40.png" alt="Logo 1">
-        <img src="http://localhost:3845/assets/1f8a89a457359b372de8a415e0cbc1c582db158f.png" alt="Logo 2">
-        <img src="http://localhost:3845/assets/2f73d038bf0921a83458082bc6f539d6171678ca.png" alt="Logo 3">
-        <img src="http://localhost:3845/assets/0bc91b51b65dbf83724259c913f4d6f0ec168119.png" alt="Logo 4">
-        <img src="http://localhost:3845/assets/bb096e1f913dce6bb0c66bc2f94f2a0b1cbb07cf.png" alt="Logo 5">
-        <img src="http://localhost:3845/assets/f1d09a18233486dedcc0bfb29437666d52f4dbb0.png" alt="Logo 6">
-      </div>
-      <!-- Add badges, backgrounds, etc. as needed -->
-    </div>
-    <!-- ... Add all other sections here, following the Figma structure ... -->
-    <!-- Footer Section -->
-    <div class="footer-section">
-      <div class="footer-copyright">
-        Copyright 2022 Circle. All rights reserved.
-      </div>
-      <!-- Add more footer content as per Figma -->
-    </div>
+    </footer>
   </div>
 </body>
-</html> 
+</html>
