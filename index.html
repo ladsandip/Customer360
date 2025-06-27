@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Animated Cloud Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #87ceeb; /* Optional: sky blue background */
+    }
+    .cloud-bg {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 40vh; /* Adjust as needed */
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .cloud {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      min-width: 600px; /* Adjust based on your image */
+      height: auto;
+      animation:
+        cloud-breathe 15s ease-in-out infinite,
+        cloud-drift 60s linear infinite;
+      will-change: transform;
+      opacity: 0.95;
+      transform: scaleY(-1);
+    }
+    @keyframes cloud-breathe {
+      0%, 100% {
+        transform: scaleY(-1) scale(1) translateX(0);
+      }
+      50% {
+        transform: scaleY(-1) scale(1.15) translateX(0);
+      }
+    }
+    @keyframes cloud-drift {
+      0% {
+        transform: translateX(0) scaleY(-1) scale(1);
+      }
+      100% {
+        transform: translateX(-20vw) scaleY(-1) scale(1);
+      }
+    }
+  </style>
 </head>
-<div class="cloud-bg">
-  <img rel="img" href="src/cloud.png" class="cloud animate-cloud-breathe" alt="Clouds" />
-</div>
+<body>
+  <div class="cloud-bg">
+    <img src="cloud.png" class="cloud" alt="Clouds" />
+  </div>
+</body>
 </html>
-
-
-
-
